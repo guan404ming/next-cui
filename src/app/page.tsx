@@ -1,5 +1,6 @@
 "use client";
 import { Tldraw } from "tldraw";
+import { ChatSection } from "@/components/chat";
 
 export default function Home() {
   return (
