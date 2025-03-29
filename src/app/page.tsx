@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -34,16 +33,17 @@ export default function Home() {
         <Tldraw>
           <SheetContext />
         </Tldraw>
-
-        <Sheet open={open} onOpenChange={setOpen}>
-          <SheetContent>
-            <SheetHeader>
-              <SheetTitle>Are you absolutely sure?</SheetTitle>
-            </SheetHeader>
-            <ChatSection />
-          </SheetContent>
-        </Sheet>
       </div>
+
+      <Sheet open={open} onOpenChange={setOpen}>
+        <SheetTrigger />
+        <SheetContent className="w-[1200px] sm:w-[600px] sm:max-w-[540px]">
+          <SheetHeader>
+            <SheetTitle>Are you absolutely sure?</SheetTitle>
+          </SheetHeader>
+          <ChatSection />
+        </SheetContent>
+      </Sheet>
     </main>
   );
 }
