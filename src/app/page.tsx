@@ -1,14 +1,7 @@
 "use client";
 import { Tldraw, track, useEditor } from "tldraw";
-import { ChatSection } from "@/components/chat";
 import { useEffect, useState } from "react";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import ChatSheet from "@/components/chatSheet";
 
 export default function Home() {
   const [open, setOpen] = useState(false);
@@ -35,15 +28,7 @@ export default function Home() {
         </Tldraw>
       </div>
 
-      <Sheet open={open} onOpenChange={setOpen}>
-        <SheetTrigger />
-        <SheetContent className="w-[1200px] sm:w-[600px] sm:max-w-[540px]">
-          <SheetHeader>
-            <SheetTitle>Are you absolutely sure?</SheetTitle>
-          </SheetHeader>
-          <ChatSection />
-        </SheetContent>
-      </Sheet>
+      <ChatSheet open={open} setOpen={setOpen} />
     </main>
   );
 }
