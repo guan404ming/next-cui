@@ -8,14 +8,10 @@ export default function Home() {
 
   const SheetContext = track(() => {
     const editor = useEditor();
-    const selected = editor.getSelectedShapes();
-
-    useEffect(() => {
-      if (selected.length > 0) {
-        setOpen(true);
-        editor.selectNone();
-      }
-    }, [selected]);
+    const shapeUtils = editor.getShapeUtil("note");
+    shapeUtils.onClick = () => {
+      setOpen(true);
+    };
 
     return null;
   });
